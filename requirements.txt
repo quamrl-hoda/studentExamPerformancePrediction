@@ -1,19 +1,7 @@
-<<<<<<< HEAD
 pandas 
 numpy 
 seaborn 
 scikit-learn
 flask
-
--e .
-=======
-pandas  
-seaborn 
-scikit-learn
-flask
-matplotlib
-numpy
-catboost
-xgboost
+dill
 # -e .
->>>>>>> d112f19 (eda&problemStatement)
