@@ -5,7 +5,7 @@ import pandas as pd
 from src.exception import CustomException
 from src.logger import logging
 import dill
-
+from sklearn.metrics import r2_score
 
 def save_object(file_path, obj):
     """This function is responsible for saving the object to the file path"""
@@ -18,4 +18,26 @@ def save_object(file_path, obj):
 
     except Exception as e:
         logging.error("Error occurred while saving object")
+        raise CustomException(e, sys)
+
+def evaluate_models(X_train, y_train, X_test, y_test, models):
+    """This function is responsible for evaluating the models"""
+    try:
+        report = {}
+
+        for i in range(len(list(models))):
+            model = list(models.values())[i]
+            model.fit(X_train, y_train)
+
+            y_test_pred = model.predict(X_test)
+            
+            train_model_score = r2_score(y_train, model.predict(X_train))
+            test_model_score = r2_score(y_test, y_test_pred)
+
+            report[list(models.keys())[i]] = test_model_score
+
+        return report
+
+    except Exception as e:
+        logging.error("Error occurred while evaluating models")
         raise CustomException(e, sys)
