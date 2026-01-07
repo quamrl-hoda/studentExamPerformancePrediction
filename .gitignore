@@ -146,6 +146,18 @@ venv.bak/
 mlenv/
 mlenv
 mlenv.bak/
+<<<<<<< HEAD
+=======
+kidney/
+kidney.bak/
+kidney3/
+kidney3.bak/
+mlenvs/
+mlenvs.bak/
+mlenvs
+stuenv
+stuenv.bak/
+>>>>>>> d112f19 (eda&problemStatement)
 
 # Spyder project settings
 .spyderproject

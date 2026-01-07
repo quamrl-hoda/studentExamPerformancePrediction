@@ -1,6 +1,10 @@
 import sys
+<<<<<<< HEAD
 import logging
 
+=======
+from logger import logging
+>>>>>>> d112f19 (eda&problemStatement)
 def error_message_detail(error, error_detail: sys):
   _, _, exc_tb = error_detail.exc_info()
   file_name = exc_tb.tb_frame.f_code.co_filename
