@@ -41,7 +41,7 @@ class DataTransformation:
             # Categorical pipeline
             cat_pipeline = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('one_hot_encoder', OneHotEncoder()),
+                ('one_hot_encoder', OneHotEncoder(handle_unknown='ignore')),
                 ('scaler', StandardScaler(with_mean=False))
             ]) 
             logging.info("Numerical and categorical pipelines created")
@@ -94,7 +94,6 @@ class DataTransformation:
                 obj=preprocessing_obj
             )
             return (train_arr, test_arr, self.data_transformation_config.preprocessor_obj_file_path)
-        
         except Exception as e:
             logging.error("Error occurred during data transformation")
             raise CustomException(e, sys)

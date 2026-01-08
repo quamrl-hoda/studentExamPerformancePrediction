@@ -151,6 +151,9 @@ mlenvs/
 mlenvs.bak/
 artifacts/
 .artifacts/
+stuenv/
+stuenv*/
+stuenv.bak/
 # Spyder project settings
 .spyderproject
 .spyproject
